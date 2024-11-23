@@ -3,29 +3,29 @@ function showContent(language) {
     const profilePicture = document.querySelector('.profile-picture');
 
     // Remove conteúdo antigo
-    const currentHTML = box.innerHTML; // Salva conteúdo inicial
     box.innerHTML = '';
-
     profilePicture.style.transition = 'all 0.5s ease-in-out';
     profilePicture.style.position = 'absolute';
     profilePicture.style.top = '10px';
     profilePicture.style.left = '10px';
     box.appendChild(profilePicture);
 
-    // Adiciona novo conteúdo
+    // Adiciona novo conteúdo com base no idioma
     let nameText = '';
     if (language === 'pt') nameText = 'Golfão';
     else if (language === 'en') nameText = 'Golfo';
     else if (language === 'jp') nameText = `
         <ruby>
-            金帝路 湾
-            <rt>きんていろ ゴルフ</rt>
+            金帝路<rt>きんていろ</rt>
+        </ruby>
+        <ruby>
+            湾<rt>ゴルフ</rt>
         </ruby>
     `;
 
     const content = `
         <h1>${nameText}</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
         <button class="back-button" onclick="resetContent()">Voltar</button>
     `;
     box.innerHTML += content;
@@ -38,13 +38,15 @@ function resetContent() {
 
     // Resetando conteúdo inicial
     box.innerHTML = `
-        <img class="profile-picture" src="profile.png" alt="Profile Picture">
+        <img class="profile-picture" src="img/profile.png" alt="Profile Picture">
         <div class="name">
             <h1>Golfão</h1>
             <h2>
                 <ruby>
-                    金帝路 湾
-                    <rt>きんていろ ゴルフ</rt>
+                    金帝路<rt>きんていろ</rt>
+                </ruby>
+                <ruby>
+                    湾<rt>ゴルフ</rt>
                 </ruby>
             </h2>
         </div>

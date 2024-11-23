@@ -31,7 +31,7 @@ body {
     text-align: center;
     transition: all 0.3s ease-in-out;
     position: relative;
-    color: #333; /* Corrigindo cores */
+    color: #222; /* Fonte escura para contraste */
 }
 
 /* Imagem de perfil */
@@ -47,13 +47,13 @@ body {
 .name h1 {
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #222; /* Ajustando cor para contraste */
 }
 
 .name h2 {
     font-size: 18px;
     margin-top: 5px;
-    color: #333; /* Corrigindo cores */
+    color: #444; /* Ajustando cor para contraste */
 }
 
 /* Botões de idiomas */
