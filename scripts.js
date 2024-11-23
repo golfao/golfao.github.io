@@ -1,75 +1,61 @@
+let initialHTML = null;
+
 function showContent(language) {
-    const box = document.querySelector('.box');
+    const profileBox = document.querySelector(".profile-box");
 
-    // Adiciona a classe de fade-out para esconder o conteúdo atual
-    box.classList.remove('fade-in');
-    box.classList.add('fade-out');
+    // Save the initial HTML for "Voltar"
+    if (!initialHTML) {
+        initialHTML = profileBox.innerHTML;
+    }
 
-    // Aguarda o fim do fade-out para alterar o conteúdo
+    const translations = {
+        pt: `
+            <img src="img/profile.png" alt="Profile Picture" class="profile-img">
+            <h1 class="profile-name">Golfão</h1>
+            <ruby class="profile-name-jp">
+                金<rt>きん</rt>帝<rt>てい</rt>路<rt>ろ</rt> 湾<rt>ゴルフ</rt>
+            </ruby>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Curabitur accumsan, quam a tincidunt dapibus, eros ligula aliquet erat.</p>
+            <button onclick="resetContent()">Voltar</button>
+        `,
+        en: `
+            <img src="img/profile.png" alt="Profile Picture" class="profile-img">
+            <h1 class="profile-name">Golfo</h1>
+            <ruby class="profile-name-jp">
+                金<rt>きん</rt>帝<rt>てい</rt>路<rt>ろ</rt> 湾<rt>ゴルフ</rt>
+            </ruby>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Integer fringilla, nisl vel vulputate vehicula.</p>
+            <button onclick="resetContent()">Back</button>
+        `,
+        jp: `
+            <img src="img/profile.png" alt="Profile Picture" class="profile-img">
+            <h1 class="profile-name">金帝路 湾</h1>
+            <ruby class="profile-name-jp">
+                金<rt>きん</rt>帝<rt>てい</rt>路<rt>ろ</rt> 湾<rt>ゴルフ</rt>
+            </ruby>
+            <p>ローレム・イプサムはダミーテキスト。</p>
+            <p>様々なコンテンツを置き換えるために使われます。</p>
+            <button onclick="resetContent()">戻る</button>
+        `,
+    };
+
+    profileBox.classList.add("fade-out");
     setTimeout(() => {
-        let content = '';
-
-        // Define o conteúdo com base no idioma selecionado
-        if (language === 'pt') {
-            content = `
-                <h1>Golfão</h1>
-                <p>Bem-vindo ao site oficial do Golfão!</p>
-            `;
-        } else if (language === 'en') {
-            content = `
-                <h1>Golfão</h1>
-                <p>Welcome to Golfão's official website!</p>
-            `;
-        } else if (language === 'jp') {
-            content = `
-                <h1>
-                    <ruby>金帝路<rt>きん てい ろ</rt></ruby> 
-                    <ruby>湾<rt>ゴルフ</rt></ruby>
-                </h1>
-                <p>ゴルファンの公式ウェブサイトへようこそ！</p>
-            `;
-        }
-
-        // Atualiza o conteúdo da box
-        box.innerHTML = `
-            <img class="profile-picture" src="img/profile.png" alt="Profile Picture">
-            ${content}
-            <button class="back-button" onclick="resetContent()">Voltar</button>
-        `;
-
-        // Remove a classe fade-out e adiciona fade-in para exibir o novo conteúdo
-        box.classList.remove('fade-out');
-        box.classList.add('fade-in');
-    }, 500); // Tempo para o fade-out
+        profileBox.innerHTML = translations[language];
+        profileBox.classList.remove("fade-out");
+        profileBox.classList.add("fade-in");
+    }, 1000);
 }
 
 function resetContent() {
-    const box = document.querySelector('.box');
+    const profileBox = document.querySelector(".profile-box");
 
-    // Aplica a classe de fade-out ao voltar ao conteúdo inicial
-    box.classList.remove('fade-in');
-    box.classList.add('fade-out');
-
-    // Após o fade-out, redefine o conteúdo inicial
+    profileBox.classList.add("fade-out");
     setTimeout(() => {
-        box.innerHTML = `
-            <img class="profile-picture" src="img/profile.png" alt="Profile Picture">
-            <div class="name">
-                <h1>Golfão</h1>
-                <h2>
-                    <ruby>金帝路<rt>きん てい ろ</rt></ruby> 
-                    <ruby>湾<rt>ゴルフ</rt></ruby>
-                </h2>
-            </div>
-            <div class="language-buttons">
-                <button onclick="showContent('pt')">Português</button>
-                <button onclick="showContent('en')">English</button>
-                <button onclick="showContent('jp')">日本語</button>
-            </div>
-        `;
-
-        // Remove a classe fade-out e adiciona fade-in para o conteúdo inicial
-        box.classList.remove('fade-out');
-        box.classList.add('fade-in');
-    }, 500); // Tempo para o fade-out
+        profileBox.innerHTML = initialHTML;
+        profileBox.classList.remove("fade-out");
+        profileBox.classList.add("fade-in");
+    }, 1000);
 }
