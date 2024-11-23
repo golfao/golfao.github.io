@@ -18,10 +18,8 @@ function showContent(language) {
         if (language === 'pt') nameText = 'Golfão';
         else if (language === 'en') nameText = 'Golfo';
         else if (language === 'jp') nameText = `
-            <ruby>金<rt>きん</rt></ruby>
-            <ruby>帝<rt>てい</rt></ruby>
-            <ruby>路<rt>ろ</rt></ruby>
-            湾<rt>ゴルフ</rt>
+            <ruby>金帝路<rt>きんていろ</rt></ruby> 
+            <ruby>湾<rt>ゴルフ</rt></ruby>
         `;
 
         const content = `
@@ -39,7 +37,6 @@ function showContent(language) {
 // Função para voltar ao estado inicial
 function resetContent() {
     const box = document.querySelector('.box');
-    const profilePicture = document.querySelector('.profile-picture');
 
     box.classList.add('fade-out');
 
@@ -49,10 +46,8 @@ function resetContent() {
             <div class="name">
                 <h1>Golfão</h1>
                 <h2>
-                    <ruby>金<rt>きん</rt></ruby>
-                    <ruby>帝<rt>てい</rt></ruby>
-                    <ruby>路<rt>ろ</rt></ruby>
-                    湾<rt>ゴルフ</rt>
+                    <ruby>金帝路<rt>きんていろ</rt></ruby> 
+                    <ruby>湾<rt>ゴルフ</rt></ruby>
                 </h2>
             </div>
             <div class="language-buttons">
