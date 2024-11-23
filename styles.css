@@ -31,6 +31,7 @@ body {
     text-align: center;
     transition: all 0.3s ease-in-out;
     position: relative;
+    color: #333; /* Corrigindo cores */
 }
 
 /* Imagem de perfil */
@@ -52,15 +53,12 @@ body {
 .name h2 {
     font-size: 18px;
     margin-top: 5px;
-}
-
-.furigana {
-    font-size: 12px;
-    color: #777;
+    color: #333; /* Corrigindo cores */
 }
 
 /* Botões de idiomas */
-.language-buttons button {
+.language-buttons button,
+.back-button {
     background: #333;
     color: white;
     border: none;
@@ -71,7 +69,8 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.language-buttons button:hover {
+.language-buttons button:hover,
+.back-button:hover {
     background: #555;
 }
 
