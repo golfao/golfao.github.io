@@ -1,39 +1,33 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golfão</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        ruby {
-            font-size: 1.2em;
-        }
-        rt {
-            font-size: 0.6em;
-            color: #ccc;
-        }
-    </style>
+    <title>Golfão Card</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p>
-            <ruby>愛<rt>あい</rt></ruby> means "love".
-        </p>
-        <p>
-            <ruby>ありがとう<rt>arigatou</rt></ruby> translates to "thank you".
-        </p>
+    <div class="container">
+        <div class="box">
+            <img class="profile-picture" src="profile.jpg" alt="Profile Picture">
+            <div class="name">
+                <h1>Golfão</h1>
+                <h2>金帝路 湾 <span class="furigana">(きんていろ ゴルフ)</span></h2>
+            </div>
+            <div class="language-buttons">
+                <button onclick="showContent('pt')">Português</button>
+                <button onclick="showContent('en')">English</button>
+                <button onclick="showContent('jp')">日本語</button>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="#"><div class="icon">1</div></a>
+            <a href="#"><div class="icon">2</div></a>
+            <a href="#"><div class="icon">3</div></a>
+            <a href="#"><div class="icon">4</div></a>
+            <a href="#"><div class="icon">5</div></a>
+        </div>
     </div>
+    <script src="scripts.js"></script>
 </body>
 </html>
