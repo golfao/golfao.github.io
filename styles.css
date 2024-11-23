@@ -29,8 +29,8 @@ body, html {
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     object-fit: cover;
-    float: left; /* Usado para criar a hitbox para o texto */
-    margin: 0 10px 10px 0;
+    margin: 0 auto;
+    display: block; /* Volta a centralizar a imagem */
 }
 
 /* Nome e furigana */
