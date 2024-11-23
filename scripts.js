@@ -2,6 +2,7 @@ function showContent(language) {
     const box = document.querySelector('.box');
 
     // Adiciona a classe de fade-out para esconder o conteúdo atual
+    box.classList.remove('fade-in');
     box.classList.add('fade-out');
 
     // Aguarda o fim do fade-out para alterar o conteúdo
@@ -46,6 +47,7 @@ function resetContent() {
     const box = document.querySelector('.box');
 
     // Aplica a classe de fade-out ao voltar ao conteúdo inicial
+    box.classList.remove('fade-in');
     box.classList.add('fade-out');
 
     // Após o fade-out, redefine o conteúdo inicial
