@@ -1,37 +1,43 @@
 function showContent(language) {
     const box = document.querySelector('.box');
-    const profilePicture = document.querySelector('.profile-picture');
 
     // Aplicando fade-out ao conteúdo
     box.classList.add('fade-out');
 
     // Após fade-out, adicionar novo conteúdo
     setTimeout(() => {
-        box.innerHTML = '';
-
-        profilePicture.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
-        profilePicture.style.transform = 'translateX(-20px)';
-        box.appendChild(profilePicture);
+        let content = '';
 
         // Adiciona novo conteúdo com base no idioma
-        let nameText = '';
-        if (language === 'pt') nameText = 'Golfão';
-        else if (language === 'en') nameText = 'Golfo';
-        else if (language === 'jp') nameText = `
-            <ruby>金帝路<rt>きんていろ</rt></ruby> 
-            <ruby>湾<rt>ゴルフ</rt></ruby>
-        `;
+        if (language === 'pt') {
+            content = `
+                <h1>Golfão</h1>
+                <p>Bem-vindo ao site oficial do Golfão!</p>
+            `;
+        } else if (language === 'en') {
+            content = `
+                <h1>Golfo</h1>
+                <p>Welcome to Golfão's official website!</p>
+            `;
+        } else if (language === 'jp') {
+            content = `
+                <h1>
+                    <ruby>金帝路<rt>きんていろ</rt></ruby> 
+                    <ruby>湾<rt>ゴルフ</rt></ruby>
+                </h1>
+                <p>ゴルファンの公式ウェブサイトへようこそ！</p>
+            `;
+        }
 
-        const content = `
-            <h1>${nameText}</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+        box.innerHTML = `
+            <img class="profile-picture" src="img/profile.png" alt="Profile Picture">
+            ${content}
             <button class="back-button" onclick="resetContent()">Voltar</button>
         `;
 
-        box.innerHTML += content;
         box.classList.remove('fade-out');
         box.classList.add('fade-in');
-    }, 500); // Esperar o fade-out antes de renderizar
+    }, 500);
 }
 
 // Função para voltar ao estado inicial
