@@ -2,7 +2,6 @@ function showContent(language) {
     const box = document.querySelector('.box');
 
     // Adiciona a classe de fade-out para esconder o conteúdo atual
-    box.classList.remove('fade-in');
     box.classList.add('fade-out');
 
     // Aguarda o fim do fade-out para alterar o conteúdo
@@ -23,7 +22,7 @@ function showContent(language) {
         } else if (language === 'jp') {
             content = `
                 <h1>
-                    <ruby>金帝路<rt>きんていろ</rt></ruby> 
+                    <ruby>金帝路<rt>きん てい ろ</rt></ruby> 
                     <ruby>湾<rt>ゴルフ</rt></ruby>
                 </h1>
                 <p>ゴルファンの公式ウェブサイトへようこそ！</p>
@@ -47,7 +46,6 @@ function resetContent() {
     const box = document.querySelector('.box');
 
     // Aplica a classe de fade-out ao voltar ao conteúdo inicial
-    box.classList.remove('fade-in');
     box.classList.add('fade-out');
 
     // Após o fade-out, redefine o conteúdo inicial
@@ -57,7 +55,7 @@ function resetContent() {
             <div class="name">
                 <h1>Golfão</h1>
                 <h2>
-                    <ruby>金帝路<rt>きんていろ</rt></ruby> 
+                    <ruby>金帝路<rt>きん てい ろ</rt></ruby> 
                     <ruby>湾<rt>ゴルフ</rt></ruby>
                 </h2>
             </div>
